@@ -16,11 +16,13 @@ func RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
 }
 
 func RegisterInterfaces(registry cdctypes.InterfaceRegistry) {
-	registry.RegisterImplementations((*sdk.Msg)(nil), &MsgDelegate{})
-	registry.RegisterImplementations((*sdk.Msg)(nil), &MsgUndelegate{})
-	registry.RegisterImplementations((*sdk.Msg)(nil), &MsgRedelegate{})
-	registry.RegisterImplementations((*sdk.Msg)(nil), &MsgWithdrawRewards{})
-	registry.RegisterImplementations((*sdk.Msg)(nil), &MsgUpdateParams{})
+	registry.RegisterImplementations((*sdk.Msg)(nil),
+		&MsgDelegate{},
+		&MsgUndelegate{},
+		&MsgRedelegate{},
+		&MsgWithdrawRewards{},
+		&MsgUpdateParams{},
+	)
 }
 
 var (
